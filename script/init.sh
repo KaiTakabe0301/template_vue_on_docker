@@ -17,4 +17,4 @@ if [[ $yn =~ [yY] ]] ; then
     done
 fi
 echo "PROJECT_NAME=${PROJECT_NAME}" | sed -e 's/$//g'>.env
-docker-compose run --rm app sh -c "vue create ${PROJECT_NAME} ."
+docker-compose run --rm app sh -c "vue create ${PROJECT_NAME} && cd ${PROJECT_NAME} && mv * .[^\.]* .. && cd .. && rm -rf ${PROJECT_NAME}"

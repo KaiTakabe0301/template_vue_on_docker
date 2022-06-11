@@ -6,6 +6,6 @@ services:
       - 8080:8080
     volumes:
       - ./src-vue/:/usr/src/app
-    command: sh -c "cd ${PROJECT_NAME} && yarn run serve"
+    command: sh -c "yarn run serve"
 volumes:
   node_modules:
